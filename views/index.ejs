@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body class="bg-black p-2">
+
+   
+    <div
+      class="navbar 
+             bg-white bg-opacity-20 py-4 px-8 mb-2 flex justify-between text-gray-200 mx-4 rounded-md">
+
+      <h1 
+      class="text-gray-200 font-bold text-xl "
+      >NOTES APP</h1>
+
+      <div
+      class="flex gap-4">
+        <a 
+        class="text-gray-200 font-sm inline-block  hover:text-yellow-500 "  
+        href="#"
+        >Home</a>
+
+        <a 
+        class="text-gray-200 font-sm inline-block hover:text-yellow-300"  
+        href="/new"
+        >New</a>
+      </div>
+
+    </div>
+
+
+    <div 
+    class="filesgallery flex flex-wrap gap-2 px-4 py-2 ">
+
+
+    <% files.forEach((file) => { %>
+       <div
+       class=" note
+               bg-white bg-opacity-20 w-[405px] flex p-4 text-gray-200 rounded-md"
+        >
+            <a
+            href="/content/<%= file %>"        
+            class=" duminote
+                    inline-block w-full p-4 rounded-md"
+            >
+               <h1 
+               class="text-xl font-bold"><%= file %></h1>
+            </a>
+
+            <a
+            class=" p-3 rounded-md text-gray-200 font-sm inline-block mt-8 ml-49 hover:text-black hover:bg-yellow-500"
+             href="/delete/<%= file %>"><i class="ri-delete-bin-6-line"></i></a>
+
+            <a
+            class=" p-3 rounded-md text-gray-200 font-sm inline-block mt-8 ml-49 hover:text-black hover:bg-yellow-500"
+             href="/edit/<%= file %>"><i class="ri-pencil-line"></i></a>
+       </div>
+
+    <%})%>
+        
+    </div>
+    
+   
+</body>
+</html>
